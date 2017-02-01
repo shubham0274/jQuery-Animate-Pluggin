@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo Jquery</title>
+    <link rel="stylesheet" href="">
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+  <style>
+      body{
+        font-family: 'Open Sans',sans-serif;
+      }
+      a{
+        border-radius: 5px;
+      }
+
+
+
+  </style>
+</head>
+<body>
+    <script>
+       (function($){
+            $.fn.size = function(option){
+
+                var setting = $.extend({
+                    fontSize:"70px",
+                    textAlign:"center",
+                    transition:"all 2s ease",
+                    // display:"none" 
+
+
+            },option);
+
+                return this.css({
+                    fontSize:setting.fontSize,
+                    textAlign:setting.textAlign,
+                    transition:setting.transition,
+                    display:setting.display
+                });
+            };
+       } (jQuery) ); 
+
+       $(document).ready(function(){
+
+            prompt ('Hi Shubham');
+            $('h1').size();
+            $("a").click(function(){
+                // $("p").css("display", "none");
+                // $("p").size('slow')
+                $("p").fadeToggle('slow');
+                    
+            });
+
+       }); 
+
+
+
+    </script>
+
+
+    <h1>Learn JQuery</h1>
+    <div style="text-align: center;">
+    <p id="hide" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quasi dolorum aliquid reprehenderit voluptatum cum, laboriosam magni ratione maxime. Necessitatibus facere labore hic quod recusandae id magni quis, sint natus!</p>
+    <a href="#" style="display:inline-block;padding: 5px 15px;background-color:crimson; color:white;text-decoration:none;">learn more</a>
+    </div>
+</body>
+</html>
